@@ -1,13 +1,9 @@
 class Post < ActiveRecord::Base
 
   belongs_to :author
-  validate :is_title_case
-
   #Here's our callback
   before_validation :make_title_case
-
-  #Second callback- does not affect the model or validation!
-  before_save :email_author_about_post
+  validate :is_title_case
 
 
   private
