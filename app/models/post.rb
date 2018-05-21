@@ -6,6 +6,10 @@ class Post < ActiveRecord::Base
   #Here's our callback
   before_validation :make_title_case
 
+  #Second callback- does not affect the model or validation!
+  before_save :email_atuhor_about_post
+
+
   private
 
   def is_title_case
