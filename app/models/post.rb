@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
   before_validation :make_title_case
 
   #Second callback- does not affect the model or validation!
-  before_save :email_atuhor_about_post
+  before_save :email_author_about_post
 
 
   private
